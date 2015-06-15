@@ -5,8 +5,9 @@
  * -End Time
  * -Name
  * -Professor
+ * -Credits
  * @author Josh Cohen
- * @version 1.0
+ * @version 1.01
  */
 public class Class 
 {
@@ -14,6 +15,7 @@ public class Class
     public String professor;
     public String beginningTime;
     public String endingTime;
+    public int credits;
     
     /**
      * Initializes new Class with a given name, professor, beginning Time
@@ -24,12 +26,13 @@ public class Class
      * @param beginningTime start time of class
      * @param endingTime end time of class
      */
-    public Class(String name, String professor, String beginningTime, String endingTime)
+    public Class(String name, String professor, String beginningTime, String endingTime, int credits)
     {
         this.name = name;
         this.professor = professor;
         this.beginningTime = beginningTime;
         this.endingTime = endingTime;
+        this.credits = credits;
     }
 
     /**
@@ -102,6 +105,24 @@ public class Class
     public void setEndingTime(String endingTime) 
     {
         this.endingTime = endingTime;
+    }
+    
+    /**
+     * get the number of credits in the Class
+     * @return the number of credits
+     */
+    public int getCredits()
+    {
+        return credits;
+    }
+    
+    /**
+     * sets the number of credits for the Class
+     * @param credits number of credits in the Class
+     */
+    public void setCredits(int credits)
+    {
+        this.credits = credits;
     }
     
 }
