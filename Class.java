@@ -16,6 +16,7 @@ public class Class
     public String beginningTime;
     public String endingTime;
     public int credits;
+    public String day;
     
     /**
      * Initializes new Class with a given name, professor, beginning Time
@@ -26,13 +27,33 @@ public class Class
      * @param beginningTime start time of class
      * @param endingTime end time of class
      */
-    public Class(String name, String professor, String beginningTime, String endingTime, int credits)
+    public Class(String name, String professor, String beginningTime, 
+            String endingTime, int credits, String day)
     {
         this.name = name;
         this.professor = professor;
         this.beginningTime = beginningTime;
         this.endingTime = endingTime;
         this.credits = credits;
+        this.day = day;
+    }
+    
+    /**
+     * gets the day of the Class
+     * @return day of the Class
+     */
+    public String getDay() 
+    {
+        return day;
+    }
+
+    /**
+     * sets the day of the Class
+     * @param day day to be set of the Class
+     */
+    public void setDay(String day) 
+    {
+        this.day = day;
     }
 
     /**
