@@ -149,7 +149,7 @@ public class addClassGUI extends JDialog
 	public static void main(String[] args)
 	{
 		addClassGUI gui = new addClassGUI();
-		gui.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+		gui.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		gui.setVisible(true);
 		gui.setTitle("Add");
 		gui.pack();

@@ -18,6 +18,7 @@ public class ScheduleManager extends JFrame
 	static JLabel classSix = new JLabel();
 	static JLabel classSeven = new JLabel();
 
+	private static ScheduleManager gui;
 	private addClassGUI add;
 
 	public ScheduleManager()
@@ -92,18 +93,46 @@ public class ScheduleManager extends JFrame
 			add.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 			add.setVisible(true);
 			add.setTitle("Add");
-			add.setLocationRelativeTo(null);
 			add.pack();
+			center(add, gui);
 		}
+	}
+
+	/**
+	 * Centers a frame on the screen
+	 * 
+	 * @param frame - the frame to be centered
+	 */
+	public static void center(Window frame)
+	{
+		Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+		int x = (int) ((dimension.getWidth() - frame.getWidth()) / 2);
+		int y = (int) ((dimension.getHeight() - frame.getHeight()) / 2);
+		frame.setLocation(x, y);
+	}
+
+	/**
+	 * Centers a frame relative to another
+	 * 
+	 * @param frame - the frame to be centered
+	 * @param relative - the relative frame
+	 */
+	public static void center(Window frame, Window relative)
+	{
+		int x = relative.getX() + (relative.getWidth() / 2)
+				- (frame.getWidth() / 2);
+		int y = relative.getY() + (relative.getHeight() / 2)
+				- (frame.getHeight() / 2);
+		frame.setLocation(x, y);
 	}
 
 	public static void main(String args[])
 	{
-		ScheduleManager gui = new ScheduleManager();
-		gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		gui = new ScheduleManager();
+		gui.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		gui.setVisible(true);
 		gui.setTitle("Schedule Manager");
 		gui.setSize(400, 400);
-
+		center(gui);
 	}
 }
